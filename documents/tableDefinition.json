@@ -1,0 +1,255 @@
+{
+  "key": "tableDefinition",
+  "value": [
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "ユーザーの一意識別子",
+      "id": "TAB-001",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "NOT NULL UNIQUE",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "username",
+      "description": "ユーザーの表示名",
+      "id": "TAB-002",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "NOT NULL UNIQUE",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "email",
+      "description": "ユーザーのメールアドレス",
+      "id": "TAB-003",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "password_hash",
+      "description": "ハッシュ化されたパスワード",
+      "id": "TAB-004",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "ユーザーアカウント作成日時",
+      "id": "TAB-005",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "ユーザー情報最終更新日時",
+      "id": "TAB-006",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "スケジュールの一意識別子",
+      "id": "TAB-007",
+      "foreignKey": "",
+      "table": "schedules"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "user_id",
+      "description": "スケジュールの所有者ユーザーID",
+      "id": "TAB-008",
+      "foreignKey": "REFERENCES users(id)",
+      "table": "schedules"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "timestamp with time zone",
+      "column": "start_time",
+      "description": "スケジュールの開始時間",
+      "id": "TAB-009",
+      "foreignKey": "",
+      "table": "schedules"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "timestamp with time zone",
+      "column": "end_time",
+      "description": "スケジュールの終了時間",
+      "id": "TAB-010",
+      "foreignKey": "",
+      "table": "schedules"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "true",
+      "dataType": "boolean",
+      "column": "is_free_time",
+      "description": "暇な時間かどうかのフラグ",
+      "id": "TAB-011",
+      "foreignKey": "",
+      "table": "schedules"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "スケジュール作成日時",
+      "id": "TAB-012",
+      "foreignKey": "",
+      "table": "schedules"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "スケジュール最終更新日時",
+      "id": "TAB-013",
+      "foreignKey": "",
+      "table": "schedules"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "友達関係の一意識別子",
+      "id": "TAB-014",
+      "foreignKey": "",
+      "table": "friends"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "user_id",
+      "description": "友達関係の所有者ユーザーID",
+      "id": "TAB-015",
+      "foreignKey": "REFERENCES users(id)",
+      "table": "friends"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "friend_id",
+      "description": "友達のユーザーID",
+      "id": "TAB-016",
+      "foreignKey": "REFERENCES users(id)",
+      "table": "friends"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "'pending'",
+      "dataType": "text",
+      "column": "status",
+      "description": "友達関係のステータス（pending: 承認待ち approved: 承認済み）",
+      "id": "TAB-017",
+      "foreignKey": "",
+      "table": "friends"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "友達関係作成日時",
+      "id": "TAB-018",
+      "foreignKey": "",
+      "table": "friends"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "友達関係最終更新日時",
+      "id": "TAB-019",
+      "foreignKey": "",
+      "table": "friends"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "共有リンクの一意識別子",
+      "id": "TAB-020",
+      "foreignKey": "",
+      "table": "share_links"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "user_id",
+      "description": "共有リンクの所有者ユーザーID",
+      "id": "TAB-021",
+      "foreignKey": "REFERENCES users(id)",
+      "table": "share_links"
+    },
+    {
+      "regulation": "NOT NULL UNIQUE",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "link_token",
+      "description": "共有リンクのトークン",
+      "id": "TAB-022",
+      "foreignKey": "",
+      "table": "share_links"
+    },
+    {
+      "regulation": "",
+      "defaultValue": "",
+      "dataType": "timestamp with time zone",
+      "column": "expiration_date",
+      "description": "共有リンクの有効期限（NULLの場合は無期限）",
+      "id": "TAB-023",
+      "foreignKey": "",
+      "table": "share_links"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "共有リンク作成日時",
+      "id": "TAB-024",
+      "foreignKey": "",
+      "table": "share_links"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "共有リンク最終更新日時",
+      "id": "TAB-025",
+      "foreignKey": "",
+      "table": "share_links"
+    }
+  ]
+}

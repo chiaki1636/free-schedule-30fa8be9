@@ -1,0 +1,6 @@
+{
+  "key": "screenTransition",
+  "value": {
+    "mermaid": "graph LR\n    A[ログイン画面] --> B[ダッシュボード]\n    B --> C[新規予約]\n    B --> D[予約一覧]\n    B --> E[顧客管理]\n    C --> F[予約確認]\n    D --> G[予約詳細]\n    E --> H[顧客詳細]\n    F --> I[予約完了]\n    G --> J[予約変更]\n    G --> K[予約キャンセル]\n    H --> L[顧客情報編集]"
+  }
+}
